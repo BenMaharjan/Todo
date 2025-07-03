@@ -53,19 +53,19 @@ app.post('/exercise', (req,res) => {
     });
 })
 
-// app.put('/exercise/:id', (req, res) => {
-//     let exercise = exercises.find((exercise)=>{exercises.id ==req.params.id})
-//     if(exercise) {
-//         exercise.name = req.body.name;
-//         exercise.weight = req.body.weight;
-//         res.json({
-//             msg: "update exercise", 
-//             data: exercises
-//         });
-//     } else {
-//         msg:"exercise not found";
-//     }
-// })
+app.put('/exercise/:id', (req, res) => {
+    let exercise = exercises.find((exercise)=>exercise.id == req.params.id)
+    if(exercise) {
+        exercise.name = req.body.name;
+        exercise.weight = req.body.weight;
+        res.json({
+            msg: "update exercise", 
+            data: exercises
+        });
+    } else {
+        res.json({msg:"exercise not found"});
+    }
+})
 
 app.delete('/exercise/:id', (req,res) => {
     res.json({msg:"delete exercise"});

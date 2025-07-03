@@ -1,5 +1,6 @@
 //Install express module
 import express from 'express';
+import * as uuid from 'uuid'; // Importing uuid for unique IDs
 
 // Create an express application
 const app = express();
@@ -8,20 +9,20 @@ const PORT = 3000;
 
 app.use(express.json());
 
-const exercise = [
+const exercises = [
     {
         id: 1,
-        exercise: "Bench Press",
+        name: "Bench Press",
         weight: "100kg"
     },
     {
         id: 2,
-        exercise: "incline Dumbell Press",
+        name: "incline Dumbell Press",
         weight: "40kg"
     },
     {
         id: 3,
-        exercise: "Cable Flies",
+        name: "Cable Flies",
         weight: "20kg"
     }    
 ]
@@ -31,22 +32,40 @@ app.get('/', (req, res) => {
 });
 
 app.get('/exercise', (req,res) => {
-    res.json(exercise);
+    res.json(exercises);
 });
 
 //GET, POST, PUT, DELETE, PATCH
 
 app.get('/exercise/:id', (req,res)=> {
-    res.json({msg:"exercise 1"});
+    let exercise = exercises.filter((exercises)=> exercises.id == req.params.id);
+    res.json({
+        msg:"exercise 1",
+        data:exercise
+    });
 });
 
 app.post('/exercise', (req,res) => {
-    res.json({msg:"add exercise"});
+    exercises.push({id: uuid.v4(), ...req.body});
+    res.json({
+        msg:"add exercise",
+        data:exercises
+    });
 })
 
-app.put('/exercise/:id', (req, res) => {
-    res.json({msg: "update exercise"});
-})
+// app.put('/exercise/:id', (req, res) => {
+//     let exercise = exercises.find((exercise)=>{exercises.id ==req.params.id})
+//     if(exercise) {
+//         exercise.name = req.body.name;
+//         exercise.weight = req.body.weight;
+//         res.json({
+//             msg: "update exercise", 
+//             data: exercises
+//         });
+//     } else {
+//         msg:"exercise not found";
+//     }
+// })
 
 app.delete('/exercise/:id', (req,res) => {
     res.json({msg:"delete exercise"});

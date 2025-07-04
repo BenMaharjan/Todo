@@ -68,7 +68,12 @@ app.put('/exercise/:id', (req, res) => {
 })
 
 app.delete('/exercise/:id', (req,res) => {
-    res.json({msg:"delete exercise"});
+    let index = exercises.findIndex(exercise => exercise.id == req.params.id);
+    exercises.splice(index,1);
+    res.json({
+        msg:"delete exercise",
+        data:exercises
+    });
 })
 
 app.listen(PORT, () => {

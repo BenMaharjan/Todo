@@ -4,10 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo List App</title>
-  <link rel="stylesheet href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>Todo List</h1>
-  <script src="index.html"></script> 
+  <form class="input-container">
+    <input type="text" id="input-exercise" placeholder="Enter Exercise">
+    <button id="add-exercise" type="submit">+</button>
+  </form>
+  <div class="exercise-container">
+    <div class="new-exercise">
+      <div class="exercise-info">
+        <input type="checkbox" id="exercise" checked/>
+        <p class="exercise-name">Chest Exercise</p>
+      </div>
+      <div class="exercise-btn">
+        <button class="edit-btn">Edit Exercise</button>
+        <button class="delete-btn">Delete Exercise</button>
+      </div>      
+    </div>
+    <div class="new-exercise">
+      <div class="exercise-info">
+        <input type="checkbox" id="exercise" checked/>
+        <p class="exercise-name">Back Exercise</p>
+      </div>
+      <div class="exercise-btn">
+        <button class="edit-btn">Edit Exercise</button>
+        <button class="delete-btn">Delete Exercise</button>
+      </div>      
+    </div>
+  </div>
+  <script src="index.js"></script> 
 </body>
 </html>

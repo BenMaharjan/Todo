@@ -1,0 +1,75 @@
+body{
+  background-color:whitesmoke;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.input-container{
+  width:500px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom:10px;
+}
+
+#input-exercise{
+  width:300px;
+  height:30px;
+  font-size:1.5rem;
+}
+
+#add-exercise{
+  width:40px;
+  height:40px;
+  border-radius: 20px;
+  font-size:1.5rem;
+  border:none;
+  background-color: #a2d3ef;
+  cursor:pointer;
+}
+
+.exercise-container{
+  display:flex;
+  flex-direction:column;
+  width:500px;
+  gap:10px;
+}
+
+.new-exercise{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+  background-color:rgb(149, 244, 145);
+  border-radius: 20px;
+}
+
+.exercise-info{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.exercise-btn{
+  margin-right:10px;
+}
+
+.exercise-btn > button{
+  font-family: monospace;
+  font-size:1.1rem;
+  border-radius: 20px;
+  border:none;
+  cursor:pointer;
+  color:white;
+}
+
+.edit-btn{
+  background-color: #a2d3ef;
+}
+
+.delete-btn{
+  background-color: #eca1a1;
+}

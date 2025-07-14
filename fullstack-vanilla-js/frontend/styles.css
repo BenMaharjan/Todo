@@ -73,3 +73,63 @@ body{
 .delete-btn{
   background-color: #eca1a1;
 }
+
+.modal-background{
+  /* display:none; */
+  position:fixed;
+  left:0;
+  top:0;
+  z-index:1;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.5);
+}
+
+.modal{
+  background-color: white;
+  width: 300px;
+  margin: 25% auto;
+  border-radius: 25px;
+  padding: 10px 20px 30px 40px;;
+}
+
+.modal-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.close-btn{
+  font-size:1.5rem;
+  cursor:pointer;
+  color: grey;
+  border:none;
+}
+
+.modal-bottom{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items: flex-start;
+}
+
+#edit-exercise{
+  width: 250px;
+  height: 25px;
+  font-size: 1.5rem;
+}
+
+#edit-exercise-wrapper{
+ font-size: 1.2rem;
+}
+
+#save-exercise{
+  width: 75px;
+  height: 40px;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  border:none;
+  background-color: black;
+  color: white;
+  cursor:pointer;
+}
